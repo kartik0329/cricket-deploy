@@ -6,117 +6,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: radial-gradient(circle, #1e3c72, #2a5298);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-}
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
 
-.scene {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
+  .container {
+    text-align: center;
+  }
 
-/* Player body */
-.player {
-  position: absolute;
-  bottom: 40px;
-  left: 120px;
-}
+  .text {
+    font-size: 32px;
+    margin-bottom: 20px;
+    animation: fade 2s infinite alternate;
+  }
 
-.head {
-  width: 30px;
-  height: 30px;
-  background: #ffcc99;
-  border-radius: 50%;
-  margin: auto;
-}
+  .bat {
+    font-size: 80px;
+    display: inline-block;
+    animation: swing 1s infinite ease-in-out;
+    transform-origin: bottom center;
+  }
 
-.body {
-  width: 10px;
-  height: 60px;
-  background: white;
-  margin: auto;
-}
+  @keyframes swing {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-40deg); }
+    100% { transform: rotate(0deg); }
+  }
 
-/* Bat */
-.bat {
-  position: absolute;
-  width: 8px;
-  height: 80px;
-  background: #d2a679;
-  left: 15px;
-  top: 40px;
-  transform-origin: bottom center;
-  animation: batSwing 1s infinite ease-in-out;
-}
-
-/* Ball */
-.ball {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: red;
-  border-radius: 50%;
-  left: 0;
-  top: 160px;
-  animation: ballMove 1s infinite ease-in-out;
-}
-
-/* Text */
-.text {
-  position: absolute;
-  top: -40px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 22px;
-  animation: fade 2s infinite alternate;
-}
-
-/* Animations */
-@keyframes batSwing {
-  0% { transform: rotate(20deg); }
-  50% { transform: rotate(-60deg); }
-  100% { transform: rotate(20deg); }
-}
-
-@keyframes ballMove {
-  0% { left: 0; opacity: 1; }
-  50% { left: 120px; opacity: 1; }
-  100% { left: 300px; opacity: 0; }
-}
-
-@keyframes fade {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
+  @keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
 </style>
 </head>
 
 <body>
-
-<div class="scene">
-  <div class="text">I am playing cricket 🏏</div>
-
-  <div class="player">
-    <div class="head"></div>
-    <div class="body"></div>
-    <div class="bat"></div>
+  <div class="container">
+    <div class="text">Mr. Kartik was playing cricket</div>
+    <div class="bat">🏏</div>
   </div>
 
-  <div class="ball"></div>
-</div>
-
 <script>
-console.log("Cricket Player Animation Loaded");
+  // Simple JS to keep animation running
+  console.log("Playing Cricket Animation Loaded");
 </script>
-
 </body>
 </html>
